@@ -24,8 +24,8 @@ class TestEmailServiceProvider extends ServiceProvider
         ]);
 
         if ($this->app->runningInConsole()) {
-            $this->commands([RunSupervisor::class]);
-        }        
+            $this->commands([TestEmailCommand::class]);
+        }
 
     }
 
