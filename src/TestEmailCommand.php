@@ -42,7 +42,7 @@ class TestEmailCommand extends Command
         $to = $this->option('to');
 
         if ($to == 'default') {
-            $to = config('mail.from');
+            $to = config('mail.from.address');
         }
 
         Mail::to($to)->send(new TestEmail());
