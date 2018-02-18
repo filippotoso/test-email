@@ -23,6 +23,10 @@ class TestEmailServiceProvider extends ServiceProvider
             __DIR__.'/../views' => resource_path('views/vendor/filippo-toso/test-email'),
         ]);
 
+        if ($this->app->runningInConsole()) {
+            $this->commands([RunSupervisor::class]);
+        }        
+
     }
 
     /**
