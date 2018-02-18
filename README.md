@@ -17,16 +17,14 @@ composer require filippo-toso/test-email
 
 ## Using It
 
-For a small site you just need to add the following command to your crontab (once every minute).
+Just execute the following command and you'll receive an email to the "from" address defined in config/mail.php.
 
 ```
-php artisan test:email --to=info@example.com
+php artisan test:email
 ```
 
-For larger sites you may want to publish the configuration and add multiple commands to run different queues:
+You can also specify another destination using the "to" parameter:
 
 ```
-php artisan vendor:publish --provider="FilippoToso\LaravelSupervisor\SupervisorServiceProvider"
+php artisan test:email --to=support@filippotoso.com
 ```
-
-In the configuration file you can find useful details.
