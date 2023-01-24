@@ -2,12 +2,14 @@
     "name": "filippo-toso/test-email",
     "description": "A simple artisan command to test yout Laravel mail configuration",
     "license": "MIT",
-    "authors": [{
-        "name": "Filippo Toso",
-        "email": "filippo.toso@creativepark.it"
-    }],
+    "authors": [
+        {
+            "name": "Filippo Toso",
+            "email": "filippo.toso@creativepark.it"
+        }
+    ],
     "require": {
-        "php": "^5.6 || ^7.0 || ^8.0 || ^9.0",
+        "php": ">=^5.6",
         "illuminate/support": ">=5.5"
     },
     "autoload": {

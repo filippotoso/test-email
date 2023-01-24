@@ -30,7 +30,5 @@ class TestEmail extends Mailable
     {
 
         return $this->markdown('test-email::email');
-
     }
-
 }

@@ -12,7 +12,7 @@ class TestEmailCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'test:email {--to=default}';
+    protected $signature = 'test:email {--to=default} {--queue}';
 
     /**
      * The console command description.
@@ -45,8 +45,10 @@ class TestEmailCommand extends Command
             $to = config('mail.from.address');
         }
 
-        Mail::to($to)->send(new TestEmail());
-
+        if ($this->option('queue')) {
+            TestEmailJob::dispatch($to);
+        } else {
+            Mail::to($to)->send(new TestEmail());
+        }
     }
-
 }
