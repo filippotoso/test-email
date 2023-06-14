@@ -38,7 +38,6 @@ class TestEmailCommand extends Command
      */
     public function handle()
     {
-
         $to = $this->option('to');
 
         if ($to == 'default') {

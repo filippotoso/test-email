@@ -2,11 +2,11 @@
 
 namespace FilippoToso\TestEmail;
 
+use FilippoToso\TestEmail\Components\Constants;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class TestEmailServiceProvider extends ServiceProvider
 {
-
     /**
      * Register any events for your application.
      *
@@ -14,19 +14,19 @@ class TestEmailServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         parent::boot();
 
-        $this->loadViewsFrom(__DIR__.'/../views', 'test-email');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'test-email');
 
         $this->publishes([
-            __DIR__.'/../views' => resource_path('views/vendor/filippo-toso/test-email'),
+            __DIR__ . '/../views' => resource_path('views/vendor/filippo-toso/test-email'),
         ]);
 
         if ($this->app->runningInConsole()) {
             $this->commands([TestEmailCommand::class]);
         }
 
+        Constants::register();
     }
 
     /**
@@ -36,7 +36,5 @@ class TestEmailServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
-
 }
