@@ -25,8 +25,6 @@ class TestEmailServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([TestEmailCommand::class]);
         }
-
-        Constants::register();
     }
 
     /**
